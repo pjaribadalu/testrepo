@@ -1,0 +1,19 @@
+# - name: install nginx
+#   hosts: pi3
+#   tags: nginx
+#   diff: true
+#   become: true
+#   tasks:
+#     ansible.builtin.apt
+#       update_cache: true
+#       name: nginx
+
+- name: check uptime
+  hosts: localhost
+  tags: uptee
+  tasks:
+  - ansible.builtin.command: 
+      argv: 
+        - uptime
+        - date
+
